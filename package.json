@@ -1,0 +1,23 @@
+{
+  "name": "bot-muramasa",
+  "version": "1.0.0",
+  "description": "Bot del grupo de muramasa de telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjmillar/bot-muramasa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjmillar/bot-muramasa/issues"
+  },
+  "homepage": "https://github.com/jjmillar/bot-muramasa#readme",
+  "dependencies": {
+    "telegraf": "^4.11.2"
+  }
+}
