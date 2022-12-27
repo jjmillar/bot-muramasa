@@ -1,5 +1,5 @@
 const { Telegraf } = require('telegraf');
-const bot = new Telegraf('5537954512:AAGpZub10GXYaESwkpv0h2stL5bWp3lQL5A'); 
+const bot = new Telegraf(process.env.BOT_TOKEN); 
 /**
  *  COMANDOS BASICOS
  */
@@ -117,7 +117,7 @@ const horarios = (ctx) => {
 
 const eventos = (ctx) => {
     ctx.deleteMessage() 
-    ctx.reply('17 de Diciembre. Aniversario Elemetal Dojo en Temuco!\n A ponerle el hombro al treino ya que habrá mucha gente y sorpresas!\n A programarse desde ya!', {
+    ctx.reply('Se viene un evento a fines de enero/febrero en Temuco asi que atentos porque no está confirmado', {
         reply_markup: {
             inline_keyboard: [
                 [ { text: "Atrás", callback_data: "btn-back-menu" } ],
