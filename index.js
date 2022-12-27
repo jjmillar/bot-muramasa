@@ -139,7 +139,4 @@ bot.action('btn-horarios', horarios);
 bot.action('btn-eventos', eventos);
 bot.action('btn-salir', (ctx) => {ctx.deleteMessage()});
 
-
-// bot.launch(); // Para versión sin microbot
-module.exports = bot;
-module.exports = ({ reply }) => reply('42')
+bot.launch();
