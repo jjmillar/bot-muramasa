@@ -127,6 +127,12 @@ const eventos = (ctx) => {
     })
 };
 
+
+function goodBye(ctx) {
+    setTimeout(ctx.deleteMessage(), 2000)    
+};
+
+
 //COMANDOS BOTONES
 
 bot.command(["helio","bot","Helio", "Oie Helio"], menu);
@@ -138,13 +144,8 @@ bot.action('btn-reglamentos', reglamentos);
 bot.action('btn-horarios', horarios);
 bot.action('btn-eventos', eventos);
 bot.action('btn-salir', (ctx) => {
+    ctx.deleteMessage()
     ctx.reply('❤️', goodBye());
 });
 
 bot.launch();
-
-
-function goodBye(ctx) {
-        setTimeout(ctx.deleteMessage(), 2000)    
-};
-
