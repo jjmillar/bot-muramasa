@@ -145,7 +145,6 @@ bot.action('btn-horarios', horarios);
 bot.action('btn-eventos', eventos);
 bot.action('btn-salir', (ctx) => {
     ctx.deleteMessage()
-    ctx.goodBye()
     ctx.reply('❤️')
 });
 
