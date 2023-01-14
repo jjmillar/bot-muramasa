@@ -138,7 +138,6 @@ bot.action('btn-reglamentos', reglamentos);
 bot.action('btn-horarios', horarios);
 bot.action('btn-eventos', eventos);
 bot.action('btn-salir', (ctx) => {
-    ctx.deleteMessage();
     ctx.reply('❤️', goodBye());
 });
 
