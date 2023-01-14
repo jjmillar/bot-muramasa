@@ -129,6 +129,8 @@ const eventos = (ctx) => {
 
 
 function goodBye(ctx) {
+    ctx.deleteMessage()
+    ctx.reply('❤️')
     setTimeout(ctx.deleteMessage(), 2000)    
 };
 
@@ -144,8 +146,7 @@ bot.action('btn-reglamentos', reglamentos);
 bot.action('btn-horarios', horarios);
 bot.action('btn-eventos', eventos);
 bot.action('btn-salir', (ctx) => {
-    ctx.deleteMessage()
-    ctx.reply('❤️')
+    goodBye()
 });
 
 bot.launch();
