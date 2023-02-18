@@ -130,16 +130,15 @@ const eventos = (ctx) => {
 
 
 const goodBye = async (ctx) => {
-    try {
-        setTimeout(ctx.deleteMessage(), 2000);
+    //try {
+       // setTimeout((ctx) => ctx.deleteMessage(), 2000);
         ctx.deleteMessage();
-        ctx.sendMessage('❤️');
+      //  ctx.sendMessage('❤️');
         
         
-    } catch (error) {
-        ctx.sendMessage('Nop');
-        ctx.deleteMessage();
-    };
+    //} catch (error) {
+   //     ctx.deleteMessage();
+ //   };
     
 };
 
