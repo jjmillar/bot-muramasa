@@ -1,4 +1,5 @@
 const { Telegraf } = require('telegraf');
+require('dotenv').config();
 const bot = new Telegraf(process.env.BOT_TOKEN); 
 /**
  *  COMANDOS BASICOS
@@ -131,7 +132,7 @@ const eventos = (ctx) => {
 const goodBye = async (ctx) => {
     ctx.deleteMessage();
     ctx.sendMessage('❤️');
-    setTimeout((ctx) => ctx.deleteMessage(), 2000)    
+    setTimeout((ctx) => ctx.deleteMessage(), 2000);
 };
 
 
