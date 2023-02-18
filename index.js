@@ -128,9 +128,9 @@ const eventos = (ctx) => {
 };
 
 
-function goodBye(ctx) {
-    ctx.deleteMessage()
-    ctx.reply('❤️')
+async function goodBye(ctx) {
+    ctx.deleteMessage();
+    ctx.sendMessage('❤️');
     setTimeout(ctx.deleteMessage(), 2000)    
 };
 
@@ -145,10 +145,6 @@ bot.action('btn-rrss', rrss);
 bot.action('btn-reglamentos', reglamentos);
 bot.action('btn-horarios', horarios);
 bot.action('btn-eventos', eventos);
-bot.action('btn-salir', async (ctx) => {
-    ctx.deleteMessage();
-    ctx.sendMessage('❤️');
-    setTimeout((ctx) => ctx.deleteMessage(), 2000); 
-});
+bot.action('btn-salir', goodBye);
 
 bot.launch();
