@@ -145,10 +145,10 @@ bot.action('btn-rrss', rrss);
 bot.action('btn-reglamentos', reglamentos);
 bot.action('btn-horarios', horarios);
 bot.action('btn-eventos', eventos);
-bot.action('btn-salir', (ctx) => {
-    ctx.deleteMessage()
+bot.action('btn-salir', async (ctx) => {
+    ctx.deleteMessage();
     //ctx.reply('❤️')
-    //ctx.setTimeout(ctx.deleteMessage(), 2000)    
+    ctx.setTimeout(ctx.deleteMessage(), 2000)    
 });
 
 bot.launch();
