@@ -148,7 +148,7 @@ bot.action('btn-eventos', eventos);
 bot.action('btn-salir', async (ctx) => {
     ctx.deleteMessage();
     ctx.sendMessage('❤️');
-    await ctx.setTimeout((ctx) => ctx.deleteMessage(), 2000); 
+    setTimeout(ctx.deleteMessage(), 2000); 
 });
 
 bot.launch();
