@@ -137,7 +137,8 @@ const goodBye = async (ctx) => {
         
         
     } catch (error) {
-        ctx.sendMessage('Nop')
+        ctx.sendMessage('Nop');
+        ctx.deleteMessage();
     };
     
 };
