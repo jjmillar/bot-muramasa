@@ -131,9 +131,10 @@ const eventos = (ctx) => {
 
 const goodBye = async (ctx) => {
     try {
+        setTimeout((ctx) => {ctx.deleteMessage()}, 2000);
         ctx.deleteMessage();
         ctx.sendMessage('❤️');
-        await setTimeout((ctx) => {ctx.deleteMessage()}, 2000);
+        
         
     } catch (error) {
         ctx.sendMessage('Nop')
