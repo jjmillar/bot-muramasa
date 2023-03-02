@@ -1,6 +1,6 @@
-# fly.toml file generated for helio-bot on 2023-02-19T11:21:15-03:00
+# fly.toml file generated for bitter-voice-4470 on 2023-02-19T15:03:39-03:00
 
-app = "helio-bot"
+app = "bitter-voice-4470"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
