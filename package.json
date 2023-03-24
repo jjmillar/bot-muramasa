@@ -4,7 +4,8 @@
   "description": "Bot del grupo de muramasa de telegram",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon ./functions/index.js",
+    "build": "netlify deploy --prod"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/jjmillar/bot-muramasa#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "netlify-cli": "^13.2.1",
     "telegraf": "^4.11.2"
   },
   "devDependencies": {
