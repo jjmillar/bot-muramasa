@@ -125,16 +125,7 @@ const reglamentos = (ctx) => {
 };
 
 const salir = async (ctx) => {
-    //try {
-       // setTimeout((ctx) => ctx.deleteMessage(), 2000);
         ctx.deleteMessage();
-      //  ctx.sendMessage('❤️');
-        
-        
-    //} catch (error) {
-   //     ctx.deleteMessage();
- //   };
-    
 };
 
 
