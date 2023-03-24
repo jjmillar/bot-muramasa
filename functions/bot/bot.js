@@ -1,3 +1,32 @@
+const { Telegraf } = require('telegraf');
+require('dotenv').config();
+
+const bot = new Telegraf(process.env.BOT_TOKEN);
+
+/**
+ *  COMANDOS BASICOS
+ */
+bot.start(Buttons.menu);
+bot.help((ctx) => {ctx.reply('Escribe /helio o /bot');});
+bot.on('new_chat_members', (ctx) => {ctx.reply('Bienvenido ' + ctx.from.first_name + ' al grupo de telegram de Muramasa BJJ. Respeto ante todo y usemos el grupo para hacer crecer nuestro Jiujitsu.\n' + 'Si necesitas mas información, solo escribe /helio y te ayudaré en lo que pueda.');});
+bot.hears(['❤️'], ctx => {ctx.reply('❤️');});
+bot.hears(['estas helio?'], ctx => {ctx.reply('Si, aquí estoy ' + ctx.from.first_name + '. Ahora vivo el fly.io. Ojalá me dure...');});
+bot.hears(['Wena helio','Wena Helio', 'wena helio'], ctx => {ctx.reply('Wena wena' + ctx.from.first_name);});
+bot.on('left_chat_member', (ctx) => {ctx.reply('Farewell ' + ctx.from.first_name);});
+
+/**
+ * BOTONES
+ */
+bot.command(["helio","bot","Helio", "Oie Helio"], menu);
+bot.action("btn-back-menu", menu);
+bot.action('btn-material', material);
+bot.action('btn-apuntes', apuntes);
+bot.action('btn-rrss', rrss);
+bot.action('btn-reglamentos', reglamentos);
+bot.action('btn-horarios', horarios);
+bot.action('btn-eventos', eventos);
+bot.action('btn-salir', salir);
+
 const menu = (ctx) => {
     ctx.deleteMessage()
     ctx.reply("Hola " + ctx.from.first_name + ' ' + '.Pincha los botones de abajo para ayudarte en lo que pueda.\n' + 'Para no spamear el chat, favor de hacer click en el boton SALIR cuando ya no me necesites mas.\n', {
@@ -108,13 +137,16 @@ const salir = async (ctx) => {
     
 };
 
-module.exports.Buttons = {
-    menu,
-    material,
-    apuntes,
-    rrss,
-    horarios,
-    eventos,
-    reglamentos,
-    salir
-};
+/**
+ * RUNNING app
+ */
+//bot.launch();
+exports.handler = async event => {
+    try {
+      await bot.handleUpdate(JSON.parse(event.body))
+      return { statusCode: 200, body: "" }
+    } catch (e) {
+      console.error("error in handler:", e)
+      return { statusCode: 400, body: "This endpoint is meant for bot and telegram communication" }
+    }
+  };
