@@ -132,8 +132,8 @@ const salir = async (ctx) => {
 /**
  * RUNNING app
  */
-//bot.launch();
-exports.handler = async event => {
+bot.launch();
+/*exports.handler = async event => {
     try {
       await bot.handleUpdate(JSON.parse(event.body))
       return { statusCode: 200, body: "" }
@@ -141,4 +141,4 @@ exports.handler = async event => {
       console.error("error in handler:", e)
       return { statusCode: 400, body: "This endpoint is meant for bot and telegram communication" }
     }
-  };
+  };*/
