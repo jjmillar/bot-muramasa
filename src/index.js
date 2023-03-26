@@ -18,6 +18,8 @@ const menu = (ctx) => {
     })
 };
 
+const token = 4;
+
 const material = (ctx) => {
     ctx.deleteMessage() 
     ctx.reply('Elige el tipo de material que deseas leer.\nYa iremos agregando material de a poco 💪🏻🥋🤘🏻', {
