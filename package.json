@@ -2,8 +2,9 @@
   "name": "bot-muramasa",
   "version": "1.0.0",
   "description": "Bot del telegram de Muramasa",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
+    "dev": "node ./src/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/jjmillar/bot-muramasa/issues"
   },
-  "homepage": "https://github.com/jjmillar/bot-muramasa#readme"
+  "homepage": "https://github.com/jjmillar/bot-muramasa#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "telegraf": "^4.12.2"
+  }
 }
