@@ -4,7 +4,7 @@
   "description": "Bot del telegram de Muramasa",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./src/index.cjs",
+    "dev": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
