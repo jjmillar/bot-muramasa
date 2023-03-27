@@ -1,7 +1,0 @@
-# fly.toml file generated for helio-bot on 2023-03-26T16:03:01-03:00
-
-app = "helio-bot"
-primary_region = "scl"
-
-[build]
-  image = "flyio/hellofly:latest"
