@@ -17,30 +17,9 @@ bot.help(async (ctx) => {
   }
 });
 
-bot.on("new_chat_members", async (ctx) => {
-  try {
-    await ctx.reply(
-      "Bienvenido " +
-        ctx.from.first_name +
-        " al grupo de telegram de Muramasa BJJ. Respeto ante todo y usemos el grupo para hacer crecer nuestro Jiujitsu.\n" +
-        "Si necesitas mas información, solo escribe /helio y te ayudaré en lo que pueda."
-    );
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 bot.hears(["❤️"], async (ctx) => {
   try {
     await ctx.reply("❤️");
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-bot.on("left_chat_member", async (ctx) => {
-  try {
-    await ctx.reply("Farewell " + ctx.from.first_name);
   } catch (error) {
     console.log(error);
   }
