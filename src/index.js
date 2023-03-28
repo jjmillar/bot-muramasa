@@ -25,6 +25,14 @@ bot.hears(["❤️"], async (ctx) => {
   }
 });
 
+bot.hears(["estas helio?"], async (ctx) => {
+  try {
+    await ctx.reply("Sí, ahora vivo en Cyclic.sh Ojalá me dure aquí lol");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 /**
  * BOTONES
  */
