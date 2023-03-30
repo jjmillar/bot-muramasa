@@ -1,8 +1,15 @@
-const { Telegraf } = require("telegraf");
-require("dotenv").config();
-const Buttons = require("./buttons");
+//const { Telegraf } = require("telegraf");
+import { Telegraf } from "telegraf";
+import { config } from "dotenv";
+import * as Buttons from "./buttons.js";
 
+//const Buttons = require("./buttons");
+
+//require("dotenv").config();
+config();
 const bot = new Telegraf(process.env.BOT_TOKEN);
+
+
 
 /**
  *  COMANDOS BASICOS
@@ -25,7 +32,7 @@ bot.hears(["❤️"], async (ctx) => {
   }
 });
 
-bot.hears(["estas helio?"], async (ctx) => {
+bot.hears(["Estas helio?"], async (ctx) => {
   try {
     await ctx.reply("Sí, ahora vivo en Cyclic.sh Ojalá me dure aquí lol");
   } catch (error) {

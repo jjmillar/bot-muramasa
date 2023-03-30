@@ -2,6 +2,7 @@
   "name": "bot-muramasa",
   "version": "1.0.0",
   "description": "Bot del telegram de Muramasa",
+  "type": "module",
   "scripts": {
     "start": "node ./src/index.js",
     "dev": "node ./src/index.js",

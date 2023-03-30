@@ -1,4 +1,4 @@
-const menu = async (ctx) => {
+export const menu = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
@@ -32,7 +32,7 @@ const menu = async (ctx) => {
   }
 };
 
-const material = async (ctx) => {
+export const material = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
@@ -53,7 +53,7 @@ const material = async (ctx) => {
   }
 };
 
-const apuntes = async (ctx) => {
+export const apuntes = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply("Elige el apunte que desees leer.", {
@@ -75,7 +75,7 @@ const apuntes = async (ctx) => {
   }
 };
 
-const rrss = async (ctx) => {
+export const rrss = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply("Acá tienes nuestras redes sociales 🤓", {
@@ -99,7 +99,7 @@ const rrss = async (ctx) => {
   }
 };
 
-const horarios = async (ctx) => {
+export const horarios = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
@@ -120,7 +120,7 @@ const horarios = async (ctx) => {
   }
 };
 
-const eventos = async (ctx) => {
+export const eventos = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply("pronto mas info...", {
@@ -136,7 +136,7 @@ const eventos = async (ctx) => {
   }
 };
 
-const reglamentos = async (ctx) => {
+export const reglamentos = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
@@ -179,7 +179,7 @@ const reglamentos = async (ctx) => {
   }
 };
 
-const salir = async (ctx) => {
+export const salir = async (ctx) => {
   try {
     await ctx.deleteMessage();
   } catch (error) {
@@ -187,13 +187,16 @@ const salir = async (ctx) => {
   }
 };
 
-module.exports = {
-  menu,
-  material,
-  apuntes,
-  rrss,
-  horarios,
-  eventos,
-  reglamentos,
-  salir,
+
+/*
+export function Buttons() {
+  menu;
+  material;
+  apuntes;
+  rrss;
+  horarios;
+  eventos;
+  reglamentos;
+  salir;
 };
+*/
