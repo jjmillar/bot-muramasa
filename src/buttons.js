@@ -187,6 +187,33 @@ export const salir = async (ctx) => {
   }
 };
 
+export const help = async (ctx) => {
+  try {
+    await ctx.reply("Escribe /helio o /bot");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const hearsHeart =
+  (["❤️"],
+  async (ctx) => {
+    try {
+      await ctx.reply("❤️");
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+export const estasHelio =
+  (["Estas helio?", "estas helio?"],
+  async (ctx) => {
+    try {
+      await ctx.reply("Sí, ahora vivo en Cyclic.sh Ojalá me dure aquí lol");
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
 /*
 export function Buttons() {

@@ -14,31 +14,10 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 /**
  *  COMANDOS BASICOS
  */
-bot.start(Buttons.menu);
-
-bot.help(async (ctx) => {
-  try {
-    await ctx.reply("Escribe /helio o /bot");
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-bot.hears(["❤️"], async (ctx) => {
-  try {
-    await ctx.reply("❤️");
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-bot.hears(["Estas helio?"], async (ctx) => {
-  try {
-    await ctx.reply("Sí, ahora vivo en Cyclic.sh Ojalá me dure aquí lol");
-  } catch (error) {
-    console.log(error);
-  }
-});
+bot.start(Buttons.menu); // telegram chat: "/start"
+bot.help(Buttons.help); // telegram chat: "/help"
+bot.hears(Buttons.hearsHeart); // telegram chat: "❤️"
+bot.hears(Buttons.estasHelio); // telegram chat: "Estas helio?" "estas helio?"
 
 /**
  * BOTONES
