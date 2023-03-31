@@ -16,8 +16,6 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
  */
 bot.start(Buttons.menu); // telegram chat: "/start"
 bot.help(Buttons.help); // telegram chat: "/help"
-bot.hears(Buttons.hearsHeart); // telegram chat: "❤️"
-bot.hears(Buttons.estasHelio); // telegram chat: "Estas helio?" "estas helio?"
 
 /**
  * BOTONES

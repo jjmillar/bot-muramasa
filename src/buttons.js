@@ -194,36 +194,3 @@ export const help = async (ctx) => {
     console.log(error);
   }
 };
-
-export const hearsHeart =
-  (["❤️"],
-  async (ctx) => {
-    try {
-      await ctx.reply("❤️");
-    } catch (error) {
-      console.log(error);
-    }
-  });
-
-export const estasHelio =
-  (["Estas helio?", "estas helio?"],
-  async (ctx) => {
-    try {
-      await ctx.reply("Sí, ahora vivo en Cyclic.sh Ojalá me dure aquí lol");
-    } catch (error) {
-      console.log(error);
-    }
-  });
-
-/*
-export function Buttons() {
-  menu;
-  material;
-  apuntes;
-  rrss;
-  horarios;
-  eventos;
-  reglamentos;
-  salir;
-};
-*/
