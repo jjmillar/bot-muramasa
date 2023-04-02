@@ -1,3 +1,10 @@
+import { Configuration, OpenAIApi } from "openai";
+import { config } from "dotenv";
+
+config(); // Llama a dotenv para usar process.env
+const openai = new OpenAIApi(
+  new Configuration({ apiKey: process.env.API_KEY })); // crea servicio de openai
+
 export const menu = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -194,3 +201,23 @@ export const help = async (ctx) => {
     console.log(error);
   }
 };
+
+/* export const ai = async (ctx) => {
+  try {
+    const res = await openai
+      .createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: "cuentame un chiste" }],
+      });
+
+    console.log(res);
+    return toString(res.data.choices[0].message.content);
+  } catch (error) {
+    console.log(error);
+  }
+}; */
+
+/* export const hearsAi = async (ctx) => {
+  return await ctx.update.message.text;
+};
+ */
