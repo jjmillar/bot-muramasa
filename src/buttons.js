@@ -202,20 +202,20 @@ export const help = async (ctx) => {
   }
 };
 
-/* export const ai = async (ctx) => {
-  try {
-    const res = await openai
-      .createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: "cuentame un chiste" }],
-      });
-
-    console.log(res);
-    return toString(res.data.choices[0].message.content);
-  } catch (error) {
-    console.log(error);
+export const ai = async (ctx) => {
+  if (ctx.update.message.text.includes('oie helio dime') === true) {
+    try {
+      const res = await openai
+        .createChatCompletion({
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: `${ctx.update.message.text}` }],
+        });
+      await ctx.reply(`${res.data.choices[0].message.content}`);
+    } catch (error) {
+      console.log(error);
+    }
   }
-}; */
+};
 
 /* export const hearsAi = async (ctx) => {
   return await ctx.update.message.text;

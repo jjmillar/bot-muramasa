@@ -10,19 +10,20 @@ config(); // Llama a dotenv para usar process.env
 const bot = new Telegraf(process.env.BOT_TOKEN); // Crea nuevo servicio de bot
 
 
-/* const openai = new OpenAIApi(
+const openai = new OpenAIApi(
   new Configuration({ apiKey: process.env.API_KEY })); // crea servicio de openai
- */
-/* openai.createChatCompletion({
+
+openai.createChatCompletion({
   model: "gpt-3.5-turbo",
   messages: [{ role: "user", content: "Cuentame un chiste"}] //ctx.update.message.text
 }).then( res => {
   console.log(res.data.choices[0].message.content);
-}) */
+})
 
 /**
  * COMANDO AI
  */
+bot.on('text', Buttons.ai)
 //bot.hears(Buttons.hearsAi().includes('oie helio dime'), (ctx) => ctx.reply(`${ctx.update.message.text}`));
 //bot.hears(["Oie helio dime", "oie helio dime"], async (ctx) => ctx.reply(Buttons.ai()));
 
