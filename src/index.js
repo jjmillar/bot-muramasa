@@ -1,14 +1,21 @@
-//const { Telegraf } = require("telegraf");
 import { Telegraf } from "telegraf";
 import { config } from "dotenv";
 import * as Buttons from "./buttons.js";
+import { Configuration, OpenAIApi } from "openai";
 
-//const Buttons = require("./buttons");
 
-//require("dotenv").config();
-config();
-const bot = new Telegraf(process.env.BOT_TOKEN);
-
+/**
+ *  INICIALIZACION DE SERVICIOS
+ */
+config(); // Llama a dotenv para usar process.env
+const bot = new Telegraf(process.env.BOT_TOKEN); // Crea nuevo servicio de bot
+const openai = new OpenAIApi( new Configuration({apiKey: process.env.API_KEY})); // crea servicio de openai
+openai.createChatCompletion({ 
+  model: "gpt-3.5-turbo",
+  messages: [{ role: "user", content: "Hello ChatGPT"}]
+}).then( res => {
+  console.log(res.data.choices[0].message.content);
+})
 
 
 /**
