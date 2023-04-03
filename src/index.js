@@ -43,8 +43,6 @@ bot.action("btn-salir", Buttons.salir);
  * COMANDO AI
  */
 bot.on('text', Buttons.ai)
-//bot.hears(Buttons.hearsAi().includes('oie helio dime'), (ctx) => ctx.reply(`${ctx.update.message.text}`));
-//bot.hears(["Oie helio dime", "oie helio dime"], async (ctx) => ctx.reply(Buttons.ai()));
 
 /**
  * RUNNING app
