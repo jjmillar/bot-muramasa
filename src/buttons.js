@@ -196,7 +196,7 @@ export const salir = async (ctx) => {
 
 export const help = async (ctx) => {
   try {
-    await ctx.reply("Escribe /helio o /bot");
+    await ctx.reply("Clickea aquí 👉🏻 /helio");
   } catch (error) {
     console.log(error);
   }
@@ -216,8 +216,3 @@ export const ai = async (ctx) => {
     }
   }
 };
-
-/* export const hearsAi = async (ctx) => {
-  return await ctx.update.message.text;
-};
- */

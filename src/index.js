@@ -8,17 +8,7 @@ import { Configuration, OpenAIApi } from "openai";
  */
 config(); // Llama a dotenv para usar process.env.CONST
 const bot = new Telegraf(process.env.BOT_TOKEN); // Crea nuevo servicio de bot
-
-
-const openai = new OpenAIApi(
-  new Configuration({ apiKey: process.env.API_KEY })); // crea servicio de openai
-
-/* openai.createChatCompletion({
-  model: "gpt-3.5-turbo",
-  messages: [{ role: "user", content: "Cuentame un chiste"}] //ctx.update.message.text
-}).then( res => {
-  console.log(res.data.choices[0].message.content);
-}) */
+const openai = new OpenAIApi( new Configuration({ apiKey: process.env.API_KEY })); // crea servicio de openai
 
 /**
  *  COMANDOS BASICOS
