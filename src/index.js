@@ -21,13 +21,6 @@ const openai = new OpenAIApi(
 }) */
 
 /**
- * COMANDO AI
- */
-bot.on('text', Buttons.ai)
-//bot.hears(Buttons.hearsAi().includes('oie helio dime'), (ctx) => ctx.reply(`${ctx.update.message.text}`));
-//bot.hears(["Oie helio dime", "oie helio dime"], async (ctx) => ctx.reply(Buttons.ai()));
-
-/**
  *  COMANDOS BASICOS
  */
 bot.start(Buttons.menu); // telegram chat: "/start"
@@ -45,6 +38,13 @@ bot.action("btn-reglamentos", Buttons.reglamentos);
 bot.action("btn-horarios", Buttons.horarios);
 bot.action("btn-eventos", Buttons.eventos);
 bot.action("btn-salir", Buttons.salir);
+
+/**
+ * COMANDO AI
+ */
+bot.on('text', Buttons.ai)
+//bot.hears(Buttons.hearsAi().includes('oie helio dime'), (ctx) => ctx.reply(`${ctx.update.message.text}`));
+//bot.hears(["Oie helio dime", "oie helio dime"], async (ctx) => ctx.reply(Buttons.ai()));
 
 /**
  * RUNNING app

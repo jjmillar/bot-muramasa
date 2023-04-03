@@ -203,7 +203,7 @@ export const help = async (ctx) => {
 };
 
 export const ai = async (ctx) => {
-  if (ctx.update.message.text.includes('oie helio dime') === true) {
+  if (ctx.update.message.text.includes('oye helio') || ctx.update.message.text.includes('Oye helio') === true) {
     try {
       const res = await openai
         .createChatCompletion({
