@@ -208,7 +208,7 @@ export const ai = async (ctx) => {
       const res = await openai
         .createChatCompletion({
           model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: `${ctx.update.message.text}` }],
+          messages: [{ role: "user", content: `${ctx.update.message.text.slice(10, this.length())}` }],
         });
       await ctx.reply(`${res.data.choices[0].message.content}`);
     } catch (error) {
