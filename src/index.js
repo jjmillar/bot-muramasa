@@ -2,6 +2,7 @@ import { Telegraf } from "telegraf";
 import { config } from "dotenv";
 import * as Buttons from "./buttons.js";
 import { Configuration, OpenAIApi } from "openai";
+import ai from "./ai.js";
 
 /**
  *  INICIALIZACION DE SERVICIOS
@@ -32,8 +33,7 @@ bot.action("btn-salir", Buttons.salir);
 /**
  * COMANDO AI
  */
-bot.on('text', Buttons.ai)
-
+bot.on('text', ai);
 /**
  * RUNNING app
  */
