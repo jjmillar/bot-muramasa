@@ -34,6 +34,7 @@ bot.action("btn-salir", Buttons.salir);
  * COMANDO AI
  */
 bot.on('text', ai);
+
 /**
  * RUNNING app
  */
