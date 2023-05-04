@@ -2,11 +2,16 @@ import { Configuration, OpenAIApi } from "openai";
 import { config } from "dotenv";
 import { aiMuramasa } from "./trainAi.js";
 
-config(); // Llama a dotenv para usar process.env
-const openai = new OpenAIApi(
-  new Configuration({ apiKey: process.env.API_KEY })
-); // crea servicio de openai
+/**
+ * INITIALIZE SERVICES
+ */
+config(); // Calls dotenv to enable use of process.env.CONST
+const openai = new OpenAIApi(new Configuration({ apiKey: process.env.API_KEY })); // Create OpenAI service
 
+/**
+ * FUNCTION FOR AI THREAD
+ * @param {object} ctx - context from the message on telegram
+ */
 async function ai(ctx) {
   if (
     ctx.update.message.text.includes("oye helio") ||

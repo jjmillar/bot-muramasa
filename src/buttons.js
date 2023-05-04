@@ -1,3 +1,7 @@
+/**
+ * MAIN MENU FOR INLINE MENU
+ * @param {object} ctx - context from the message on telegram
+ */
 export const menu = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -32,6 +36,10 @@ export const menu = async (ctx) => {
   }
 };
 
+/**
+ * MATERIAL BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
 export const material = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -53,6 +61,10 @@ export const material = async (ctx) => {
   }
 };
 
+/**
+ * APUNTES BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
 export const apuntes = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -75,6 +87,10 @@ export const apuntes = async (ctx) => {
   }
 };
 
+/**
+ * RRSS BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
 export const rrss = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -99,6 +115,10 @@ export const rrss = async (ctx) => {
   }
 };
 
+/**
+ * HORARIOS BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
 export const horarios = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -120,6 +140,10 @@ export const horarios = async (ctx) => {
   }
 };
 
+/**
+ * EVENTOS BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
 export const eventos = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -136,6 +160,10 @@ export const eventos = async (ctx) => {
   }
 };
 
+/**
+ * REGLAMENTOS BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
 export const reglamentos = async (ctx) => {
   try {
     ctx.deleteMessage();
@@ -179,17 +207,25 @@ export const reglamentos = async (ctx) => {
   }
 };
 
-export const salir = async (ctx) => {
+/**
+ * HELP BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
+export const help = async (ctx) => {
   try {
-    await ctx.deleteMessage();
+    await ctx.reply("Clickea aquí 👉🏻 /helio");
   } catch (error) {
     console.log(error);
   }
 };
 
-export const help = async (ctx) => {
+/**
+ * SALIR BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
+export const salir = async (ctx) => {
   try {
-    await ctx.reply("Clickea aquí 👉🏻 /helio");
+    await ctx.deleteMessage();
   } catch (error) {
     console.log(error);
   }

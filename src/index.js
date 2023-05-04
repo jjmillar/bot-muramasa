@@ -1,26 +1,24 @@
 import { Telegraf } from "telegraf";
 import { config } from "dotenv";
 import * as Buttons from "./buttons.js";
-import { Configuration, OpenAIApi } from "openai";
 import ai from "./ai.js";
 
 /**
- *  INICIALIZACION DE SERVICIOS
+ *  INITIALIZE SERVICES
  */
-config(); // Llama a dotenv para usar process.env.CONST
-const bot = new Telegraf(process.env.BOT_TOKEN); // Crea nuevo servicio de bot
-const openai = new OpenAIApi( new Configuration({ apiKey: process.env.API_KEY })); // crea servicio de openai
+config(); // Calls dotenv to enable use of process.env.CONST
+const bot = new Telegraf(process.env.BOT_TOKEN); // Create a new service to use bot.functions
 
 /**
- *  COMANDOS BASICOS
+ *  BASIC COMMANDS
  */
 bot.start(Buttons.menu); // telegram chat: "/start"
 bot.help(Buttons.help); // telegram chat: "/help"
 
 /**
- * BOTONES
+ * INLINE BUTTONS
  */
-bot.command(["helio", "bot", "Helio", "Oie Helio"], Buttons.menu);
+bot.command(["helio", "bot", "Helio", "Oie Helio"], Buttons.menu); // Main commando to call the inline menu. Use "/helio" for example.
 bot.action("btn-back-menu", Buttons.menu);
 bot.action("btn-material", Buttons.material);
 bot.action("btn-apuntes", Buttons.apuntes);
@@ -31,11 +29,11 @@ bot.action("btn-eventos", Buttons.eventos);
 bot.action("btn-salir", Buttons.salir);
 
 /**
- * COMANDO AI
+ * AI CALL COMMAND
  */
-bot.on('text', ai);
+bot.on('text', ai); //Calls ai function on telegram app by typing "Oye helio <text>"
 
 /**
- * RUNNING app
+ * RUNNING APP
  */
-bot.launch();
+bot.launch(); // Run bot
