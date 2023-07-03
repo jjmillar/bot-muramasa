@@ -11,7 +11,7 @@ const torneos = {
 - 12-08-2023 / Open La Frontera / Gi / Arica.
 - 13-08-2023 / Open La Frontera / Nogi / Arica.
 - 12-08-2023 / Jiujitsu Fest Winter / Gi / Santiago.
-- 13-08-2023 / Jiujitsu Fest / Nogi / Santiago.
+- 13-08-2023 / Jiujitsu Fest Winter / Nogi / Santiago.
 - 26-08-2023 / Aconcagua Submission / Nogi / Los Andes.
 - Septiembre / Open Viña / Gi y Nogi / Viña del Mar.
 - 09-09-2023 / Frontera Fest / Gi / Arica.
