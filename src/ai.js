@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 import { config } from "dotenv";
-import { aiMuramasa } from "./trainAi.js";
+import { aiMuramasa } from "./info.js";
 
 /**
  * INITIALIZE SERVICES

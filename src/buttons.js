@@ -1,3 +1,5 @@
+import { torneos } from './info.js';
+
 /**
  * MAIN MENU FOR INLINE MENU
  * @param {object} ctx - context from the message on telegram
@@ -147,14 +149,16 @@ export const horarios = async (ctx) => {
 export const eventos = async (ctx) => {
   try {
     ctx.deleteMessage();
-    await ctx.reply("pronto mas info...", {
-      reply_markup: {
-        inline_keyboard: [
-          [{ text: "Atrás", callback_data: "btn-back-menu" }],
-          [{ text: "Salir", callback_data: "btn-salir" }],
-        ],
-      },
-    });
+    await ctx.reply( torneos.fechas,
+      {
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: "Atrás", callback_data: "btn-back-menu" }],
+            [{ text: "Salir", callback_data: "btn-salir" }],
+          ],
+        },
+      }
+    );
   } catch (error) {
     console.log(error);
   }
