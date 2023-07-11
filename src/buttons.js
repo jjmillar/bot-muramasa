@@ -1,4 +1,4 @@
-import { torneos } from './info.js';
+import INFO from './info.js';
 
 /**
  * MAIN MENU FOR INLINE MENU
@@ -149,7 +149,7 @@ export const horarios = async (ctx) => {
 export const eventos = async (ctx) => {
   try {
     ctx.deleteMessage();
-    await ctx.reply( torneos.fechas,
+    await ctx.reply( INFO.torneos,
       {
         reply_markup: {
           inline_keyboard: [

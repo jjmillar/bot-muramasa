@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 import { config } from "dotenv";
-import { aiMuramasa } from "./info.js";
+import INFO from "./info.js";
 
 /**
  * INITIALIZE SERVICES
@@ -21,7 +21,7 @@ async function ai(ctx) {
       const res = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
-        { role: "system", content: `${aiMuramasa.data}`},
+        { role: "system", content: `${INFO.aiMuramasa}`},
         { role: "user", content: `${ctx.update.message.text}`}
       ],
       });
