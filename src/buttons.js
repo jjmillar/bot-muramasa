@@ -1,4 +1,4 @@
-import INFO from './info.js';
+import INFO from "./info.js";
 
 /**
  * MAIN MENU FOR INLINE MENU
@@ -16,14 +16,17 @@ export const menu = async (ctx) => {
               { text: "Horarios", callback_data: "btn-horarios" },
               { text: "Eventos", callback_data: "btn-eventos" },
             ],
-            [{ text: "Redes Sociales", callback_data: "btn-rrss" }],
             [
+              { text: "Redes Sociales", callback_data: "btn-rrss" },
               {
                 text: "Playlist Spotify",
                 url: "https://open.spotify.com/playlist/4PQ5KrbS64CaRjFXdzeJDP?si=b3af847cfe5143d0",
               },
             ],
-            [{ text: "Material de Lectura", callback_data: "btn-material" }],
+            [
+              { text: "Material de Lectura", callback_data: "btn-material" },
+              { text: "Tiendita", callback_data: "btn-tienda" },
+            ],
             [{ text: "Salir", callback_data: "btn-salir" }],
           ],
         },
@@ -145,16 +148,14 @@ export const horarios = async (ctx) => {
 export const eventos = async (ctx) => {
   try {
     ctx.deleteMessage();
-    await ctx.reply( INFO.torneos,
-      {
-        reply_markup: {
-          inline_keyboard: [
-            [{ text: "Atrás", callback_data: "btn-back-menu" }],
-            [{ text: "Salir", callback_data: "btn-salir" }],
-          ],
-        },
-      }
-    );
+    await ctx.reply(INFO.torneos, {
+      reply_markup: {
+        inline_keyboard: [
+          [{ text: "Atrás", callback_data: "btn-back-menu" }],
+          [{ text: "Salir", callback_data: "btn-salir" }],
+        ],
+      },
+    });
   } catch (error) {
     console.log(error);
   }
@@ -214,6 +215,31 @@ export const reglamentos = async (ctx) => {
 export const help = async (ctx) => {
   try {
     await ctx.reply("Clickea aquí 👉🏻 /helio");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/**
+ * TIENDA BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
+export const tienda = async (ctx) => {
+  try {
+    ctx.deleteMessage();
+    await ctx.reply(
+      `Acá tenemos a la venta lo que se ha ido pidiendo y va quedando en stock:
+      - Gi blanco. Tallas A2L, A2L y A3, $60.000.-
+      - Rashguard blanco. Tallas M, L y XL, $35.000.-`,
+      {
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: "Atrás", callback_data: "btn-back-menu" }],
+            [{ text: "Salir", callback_data: "btn-salir" }],
+          ],
+        },
+      }
+    );
   } catch (error) {
     console.log(error);
   }

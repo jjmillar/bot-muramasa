@@ -26,6 +26,7 @@ bot.action("btn-rrss", Buttons.rrss);
 bot.action("btn-reglamentos", Buttons.reglamentos);
 bot.action("btn-horarios", Buttons.horarios);
 bot.action("btn-eventos", Buttons.eventos);
+bot.action("btn-tienda", Buttons.tienda);
 bot.action("btn-salir", Buttons.salir);
 
 /**
