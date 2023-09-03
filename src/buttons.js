@@ -8,11 +8,7 @@ export const menu = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
-      "Hola " +
-        ctx.from.first_name +
-        " " +
-        ".Pincha los botones de abajo para ayudarte en lo que pueda.\n" +
-        "Para no spamear el chat, favor de hacer click en el boton SALIR cuando ya no me necesites mas.\n",
+      `Hola ${ctx.from.first_name}. Pincha los botones de abajo para ayudarte en lo que pueda. Para no spamear el chat, favor de hacer click en el botón SALIR cuando ya no me necesites mas.`,
       {
         reply_markup: {
           inline_keyboard: [
