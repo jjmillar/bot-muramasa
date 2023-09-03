@@ -182,7 +182,7 @@ export const reglamentos = async (ctx) => {
             [
               {
                 text: "IBJJF Libro de reglas",
-                url: "https://drive.google.com/file/d/1sax9rYff5lj-KHo5c4iEK17O7c78ycQG/view?usp=sharing",
+                url: "https://drive.google.com/file/d/1TflN5JqrukrAG1nFtsfQjX9wkfYcqJWJ/view?usp=sharing",
               },
             ],
             [
