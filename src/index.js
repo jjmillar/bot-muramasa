@@ -1,4 +1,5 @@
 import { Telegraf } from "telegraf";
+import { message } from "telegraf/filters"; 
 import { config } from "dotenv";
 import * as Buttons from "./buttons.js";
 import ai from "./ai.js";
@@ -14,6 +15,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN); // Create a new service to use 
  */
 bot.start(Buttons.menu); // telegram chat: "/start"
 bot.help(Buttons.help); // telegram chat: "/help"
+bot.on(message("new_chat_members"), `Bienvenid@ ${ctx.from.first_name} al grupo de Muramasa. Yo soy Helio, un bot (asistente virtual) del grupo y me puedes llamar en cualuier momento escribiendo el comanto /start o /bot. Este chat funciona como un foro donde hay diferentes "temas" dentro de los cuales se puede conversar lo que uno quiera. Respeto ante todo y sigamos haciendo crecer el Jiu-Jitsu en Los Ángeles. `)
 
 /**
  * INLINE BUTTONS
