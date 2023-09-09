@@ -227,10 +227,7 @@ export const help = async (ctx) => {
 export const tienda = async (ctx) => {
   try {
     ctx.deleteMessage();
-    await ctx.reply(
-      `Acá tenemos a la venta lo que se ha ido pidiendo y va quedando en stock:
-      - Gi blanco. Tallas A2L, A2L y A3, $60.000.-
-      - Rashguard blanco. Tallas M, L y XL, $35.000.-`,
+    await ctx.reply(INFO.tienda,
       {
         reply_markup: {
           inline_keyboard: [
