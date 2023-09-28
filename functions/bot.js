@@ -1,5 +1,6 @@
 import { Telegraf } from "telegraf";
-import { message } from "telegraf/filters"; 
+import { message } from "telegraf/filters";
+import { createServer } from "http"; 
 import { config } from "dotenv";
 import * as Buttons from "./buttons.js";
 import ai from "./ai.js";
@@ -42,4 +43,5 @@ bot.on('text', ai); //Calls ai function on telegram app by typing "Oye helio <te
 //bot.launch(); // Run bot on server
 
 // Bot launch for webhooks
-bot.handleUpdate(JSON.parse(event.body))
+
+createServer(await bot.createWebhook({ domain: "https://merry-pudding-3a088c.netlify.app" })).listen(3000);
