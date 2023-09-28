@@ -1,7 +1,7 @@
 {
   "name": "bot-muramasa",
   "version": "1.0.0",
-  "main":"./src/index.js",
+  "main": "./src/index.js",
   "description": "Bot del telegram de Muramasa",
   "type": "module",
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/jjmillar/bot-muramasa#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "netlify-lambda": "^2.0.16",
     "openai": "^3.2.1",
     "telegraf": "^4.14.0"
   }
