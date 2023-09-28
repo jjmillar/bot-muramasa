@@ -39,4 +39,15 @@ bot.on('text', ai); //Calls ai function on telegram app by typing "Oye helio <te
 /**
  * RUNNING APP
  */
-bot.launch(); // Run bot
+//bot.launch(); // Run bot on server
+
+// Bot launch for webhooks
+exports.handler = async event => {
+    try {
+      await bot.handleUpdate(JSON.parse(event.body))
+      return { statusCode: 200, body: "" }
+    } catch (e) {
+      console.error("error in handler:", e)
+      return { statusCode: 400, body: "This endpoint is meant for bot and telegram communication" }
+    }
+  }
