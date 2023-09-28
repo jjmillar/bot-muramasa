@@ -1,12 +1,12 @@
 {
   "name": "bot-muramasa",
   "version": "1.0.0",
-  "main": "./src/index.js",
+  "main": "./functions/bot.js",
   "description": "Bot del telegram de Muramasa",
   "type": "module",
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js"
+    "start": "node ./functions/bot.js",
+    "dev": "nodemon ./functions/bot.js"
   },
   "engines": {
     "node": ">18.0.0"
