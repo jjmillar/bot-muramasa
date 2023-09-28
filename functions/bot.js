@@ -42,13 +42,11 @@ bot.on('text', ai); //Calls ai function on telegram app by typing "Oye helio <te
 //bot.launch(); // Run bot on server
 
 // Bot launch for webhooks
-
+bot.telegram.webhookReply = false;
 bot.launch({
     webhook: {
-      // Public domain for webhook; e.g.: example.com
       domain: 'merry-pudding-3a088c.netlify.app',
-  
-      // Port to listen on; e.g.: 8080
       port: 8888,
+      hookPath: '/webhook'
     },
   });
