@@ -15,7 +15,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN); // Create a new service to use 
  */
 bot.start(Buttons.menu); // telegram chat: "/start"
 bot.help(Buttons.help); // telegram chat: "/help"
-bot.on(message("new_chat_members"), `Bienvenid@ ${ctx.from.first_name} al grupo de Muramasa. Yo soy Helio, un bot (asistente virtual) del grupo y me puedes llamar en cualuier momento escribiendo el comanto /start o /bot. Este chat funciona como un foro donde hay diferentes "temas" dentro de los cuales se puede conversar lo que uno quiera. Respeto ante todo y sigamos haciendo crecer el Jiu-Jitsu en Los Ángeles. `)
+bot.on(message("new_chat_members"), `Bienvenid@ ${ctx.from.first_name} al grupo de Muramasa. Yo soy Helio, un bot (asistente virtual) del grupo y me puedes llamar en cualuier momento escribiendo el comanto /start o /bot. Este chat funciona como un foro donde hay diferentes "temas" dentro de los cuales se puede conversar lo que uno quiera. Respeto ante todo y sigamos haciendo crecer el Jiu-Jitsu en Los Ángeles.`)
 
 /**
  * INLINE BUTTONS
@@ -39,14 +39,4 @@ bot.on('text', ai); //Calls ai function on telegram app by typing "Oye helio <te
 /**
  * RUNNING APP
  */
-//bot.launch(); // Run bot on server
-
-// Bot launch for webhooks
-bot.telegram.webhookReply = false;
-bot.launch({
-    webhook: {
-      domain: 'merry-pudding-3a088c.netlify.app',
-      port: 8888,
-      hookPath: '/webhook'
-    },
-  });
+bot.launch(); // Run bot on server
