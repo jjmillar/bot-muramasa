@@ -182,7 +182,7 @@ export const reglamentos = async (ctx) => {
             [
               {
                 text: "IBJJF Libro de reglas",
-                url: "https://drive.google.com/file/d/18LO8oNYVrBkHRj1-jlL40uOwk3jli7KX/view?usp=drive_link",
+                url: "https://drive.google.com/file/d/18LO8oNYVrBkHRj1-jlL40uOwk3jli7KX/view?usp=sharing",
               },
             ],
             [
@@ -200,7 +200,7 @@ export const reglamentos = async (ctx) => {
             [
               {
                 text: "Regamento Chilegrappling",
-                url: "https://drive.google.com/file/d/13eKvLYyMw0HoDxskwQqXFGgSF1LddbVg/view?usp=drive_link",
+                url: "https://drive.google.com/file/d/13eKvLYyMw0HoDxskwQqXFGgSF1LddbVg/view?usp=sharing",
               },
             ],
             [{ text: "Atrás", callback_data: "btn-material" }],
