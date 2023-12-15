@@ -197,6 +197,12 @@ export const reglamentos = async (ctx) => {
                 url: "https://drive.google.com/file/d/1TflN5JqrukrAG1nFtsfQjX9wkfYcqJWJ/view?usp=sharing",
               },
             ],
+            [
+              {
+                text: "Regamento Chilegrappling",
+                url: "https://drive.google.com/file/d/13eKvLYyMw0HoDxskwQqXFGgSF1LddbVg/view?usp=drive_link",
+              },
+            ],
             [{ text: "Atrás", callback_data: "btn-material" }],
             [{ text: "Salir", callback_data: "btn-salir" }],
           ],
