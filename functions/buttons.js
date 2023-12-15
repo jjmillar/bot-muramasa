@@ -124,9 +124,9 @@ export const horarios = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
-      "Lunes: 21:00-23:00 / Gi / Clase de Fundamentales del BJJ\n" +
-        "Martes: 20:00-22:00 / NoGi / Clase de BJJ y Grappling\n" +
-        "Jueves: 20:00-22:00 / Gi / Clase avanzada",
+      "Martes: 21:00-23:00 / Gi / Clase de Fundamentales del BJJ\n" +
+        "Jueves: 21:00-23:00 / NoGi / Clase de BJJ y Grappling\n" +
+        "Viernes: 21:00-23:00 / Gi / Clase avanzada",
       {
         reply_markup: {
           inline_keyboard: [
