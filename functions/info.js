@@ -3,7 +3,7 @@
  */
 const INFO = {
   aiMuramasa:
-    "Los dias de entrenamiento de la escuela Muramasa son los siguientes. Los días Martes de 21:00 a 23:00, se entrena con gi y se estudian las técnicas fundamentales del brazilian jiu jitsu. Los días Jueves de 21:00-23:00, se entrena nogi y se ven técnicas de brazilian jiu jitsu, grappling y lucha olimpica que no ocupan gi. Los días Viernes de 21:00-23:00, se entrena con gi y se ven técnicas avanzadas del brazilian jiu jistu. La escuela Muramasa esta ubicada en la dirección Camilo Henriquez #510, Los Ángeles, Chile.",
+    `Los dias de entrenamiento de la escuela Muramasa son los siguientes. Los días Martes de 21:00 a 23:00, se entrena con gi y se estudian las técnicas fundamentales del brazilian jiu jitsu. Los días Jueves de 21:00-23:00, se entrena nogi y se ven técnicas de brazilian jiu jitsu, grappling y lucha olimpica que no ocupan gi. Los días Viernes de 21:00-23:00, se entrena con gi y se ven técnicas avanzadas del brazilian jiu jistu. La escuela Muramasa esta ubicada en la dirección Camilo Henriquez #510, Los Ángeles, Chile.`,
   torneos: ` 
 - XX-03-2024 / Grappling / NoGi / Santiago.
 - 16-03-2024 / Jiujitsu Fest / Gi / Santiago.
@@ -19,7 +19,8 @@ const INFO = {
   tienda: `Acá tenemos a la venta lo que se ha ido pidiendo y va quedando en stock:
 
 - Gi Muramasa blanco. Tallas A2L y A3, $60.000.-
-- Rashguard Muramasa blanco. Tallas M y XL, $35.000.-`,
+- Rashguard Muramasa blanco. XL, $35.000.-
+- Tape Muramasa, $5.000.-`,
 };
 
 export default INFO;
