@@ -19,7 +19,7 @@ async function ai(ctx) {
   ) {
     try {
       const res = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo-16k",
+        model: "gpt-3.5-turbo-0125",
         messages: [
         { role: "system", content: `${INFO.aiMuramasa}`},
         { role: "user", content: `${ctx.update.message.text}`}
