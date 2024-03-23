@@ -1,5 +1,5 @@
 /**
- * DATA FOR BASIC TRAINING AI BOT
+ * DATA FOR BASIC TRAINING AI BOT, TOURNAMENTS AND STORE
  */
 const INFO = {
   aiMuramasa:
@@ -18,9 +18,10 @@ const INFO = {
 - 08-12-2024 / Jiujitsu Fest / NoGi / Santiago.`,
   tienda: `Acá tenemos a la venta lo que se ha ido pidiendo y va quedando en stock:
 
-- Gi Muramasa blanco. Tallas A2L y A3, $60.000.-
-- Rashguard Muramasa blanco. XL, $35.000.-
-- Tape Muramasa, $5.000.-`,
+- Gi Muramasa blanco. Tallas A2L y A3: $60.000.-
+- Rashguard Muramasa blanco. XL: $35.000.-
+- Tape Muramasa: $5.000.-
+- Bucal Motto: $5.000.-`,
 };
 
 export default INFO;
