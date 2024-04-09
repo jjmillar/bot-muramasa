@@ -170,7 +170,7 @@ export const reglamentos = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
-      "Elige el reglamento que quieras revisar. El de ADCC está en español, pero el de IBJJF está en inglés. Pronto traduciré el reglamento 🤓",
+      "Elige el reglamento que quieras revisar. El de ADCC está en español, pero el de IBJJF está en inglés.",
       {
         reply_markup: {
           inline_keyboard: [
@@ -182,20 +182,26 @@ export const reglamentos = async (ctx) => {
             ],
             [
               {
-                text: "IBJJF Libro de reglas",
+                text: "IBJJF Libro de reglas Ingles",
+                url: "https://drive.google.com/file/d/11ZsWFhBQdiE5WxXmLDJ8vOIA5oSA1lRW/view?usp=sharing",
+              },
+            ],
+            [
+              {
+                text: "IBJJF Libro de reglas Español DESACTUALIZADO",
                 url: "https://drive.google.com/file/d/18LO8oNYVrBkHRj1-jlL40uOwk3jli7KX/view?usp=sharing",
               },
             ],
             [
               {
                 text: "IBJJF Guia de actualización de reglas",
-                url: "https://drive.google.com/file/d/1hoDZ2TwdUoMQ9ffP_nHzc_LFyXQ0aTib/view?usp=sharing",
+                url: "https://drive.google.com/file/d/1rF8QUnXf-cW5h0VppGcsGrgEyUZzOjUH/view?usp=sharing",
               },
             ],
             [
               {
-                text: "IBJJF Poster de movimientos",
-                url: "https://drive.google.com/file/d/1TflN5JqrukrAG1nFtsfQjX9wkfYcqJWJ/view?usp=sharing",
+                text: "IBJJF Poster de movimientos prohibidos",
+                url: "https://drive.google.com/file/d/1UcjwKbq4HxWK3WTyb67CLgW8quAEY-S8/view?usp=sharing",
               },
             ],
             [
