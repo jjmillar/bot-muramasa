@@ -124,10 +124,7 @@ export const horarios = async (ctx) => {
   try {
     ctx.deleteMessage();
     await ctx.reply(
-      "Lunes: 20:00-22:00 / Gi / Clase de Fundamentales\n" +
-        "Miércoles: 20:00-22:00 / NoGi / Clase de BJJ y Grappling\n" +
-        "Viernes: 20:00-22:00 / NoGi / Clase de BJJ y Grappling" +
-        "Dirección: José Manso de Velasco #474, Los Ángeles.",
+      INFO.horarios,
       {
         reply_markup: {
           inline_keyboard: [

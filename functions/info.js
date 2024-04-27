@@ -1,9 +1,8 @@
 /**
- * DATA FOR BASIC TRAINING AI BOT, TOURNAMENTS AND STORE
+ * DATA FOR BASIC TRAINING AI BOT AND GENERAL INFO
  */
 const INFO = {
-  aiMuramasa:
-    `Los dias de entrenamiento de la escuela Muramasa son los siguientes. Los días Martes de 21:00 a 23:00, se entrena con gi y se estudian las técnicas fundamentales del brazilian jiu jitsu. Los días Jueves de 21:00-23:00, se entrena nogi y se ven técnicas de brazilian jiu jitsu, grappling y lucha olimpica que no ocupan gi. Los días Viernes de 21:00-23:00, se entrena con gi y se ven técnicas avanzadas del brazilian jiu jistu. La escuela Muramasa esta ubicada en la dirección Camilo Henriquez #510, Los Ángeles, Chile.`,
+  aiMuramasa: `Los dias de entrenamiento de la escuela Muramasa son los siguientes. Los días Lunes de 20:00 a 22:00, se entrena con gi y se estudian las técnicas fundamentales del brazilian jiu jitsu. Los días Miercoles y viernes de 20:00-22:00, se entrena nogi y se ven técnicas de brazilian jiu jitsu, grappling y lucha olimpica que no ocupan gi. La escuela Muramasa esta ubicada en la dirección José Manso de Velasco #474, Los Ángeles, Chile, y es dirigida por el profesor Julián Millar, cinturón marron de brazilian jiujitsu, bajo el alero de la escuela Elemental Dojo de Chile.`,
   torneos: ` 
 - XX-03-2024 / Grappling / NoGi / Santiago.
 - 16-03-2024 / Jiujitsu Fest / Gi / Santiago.
@@ -20,8 +19,12 @@ const INFO = {
 
 - Gi Muramasa blanco. Tallas A2L y A3: $60.000.-
 - Rashguard Muramasa blanco. XL: $35.000.-
-- Tape Muramasa: $5.000.-
-- Bucal Motto: $5.000.-`,
+- Tape Muramasa: $5.000.-`,
+horarios: `- Lunes: 20:00-22:00 / Gi / Clase de Fundamentales.
+- Miércoles: 20:00-22:00 / NoGi / Clase de BJJ y Grappling.
+- Viernes: 20:00-22:00 / NoGi / Clase de BJJ y Grappling.
+
+- Dirección: José Manso de Velasco #474, Los Ángeles.`
 };
 
 export default INFO;
