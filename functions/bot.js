@@ -1,12 +1,10 @@
 import { Telegraf } from "telegraf";
-import { config } from "dotenv";
 import * as Buttons from "./buttons.js";
 import ai from "./ai.js";
 
 /**
  *  INITIALIZE SERVICES
  */
-config(); // Calls dotenv to enable use of process.env.CONST
 const bot = new Telegraf(process.env.BOT_TOKEN); // Create a new service to use bot.functions
 
 /**
