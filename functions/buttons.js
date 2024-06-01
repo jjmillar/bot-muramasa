@@ -80,7 +80,7 @@ export const apuntes = async (ctx) => {
           ],[
             {
               text: "Glosario Elemental Dojo",
-              url: "https://www.glosarioed.netlify.app",
+              url: "https://glosarioed.netlify.app",
             },
           ],
           [{ text: "Atrás", callback_data: "btn-material" }],
