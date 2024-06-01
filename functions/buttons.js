@@ -77,6 +77,11 @@ export const apuntes = async (ctx) => {
               text: "Diccionario Japones-Español",
               url: "https://drive.google.com/file/d/1-D6b7pBpJu3TOHBks_t4bXhFI247h2E3/view?usp=sharings",
             },
+          ],[
+            {
+              text: "Glosario Elemental Dojo",
+              url: "https://www.glosarioed.netlify.app",
+            },
           ],
           [{ text: "Atrás", callback_data: "btn-material" }],
           [{ text: "Salir", callback_data: "btn-salir" }],

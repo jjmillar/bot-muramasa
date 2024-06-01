@@ -18,7 +18,6 @@ const INFO = {
   tienda: `Acá tenemos a la venta lo que se ha ido pidiendo y va quedando en stock:
 
 - Gi Muramasa blanco. Tallas A2L y A3: $60.000.-
-- Rashguard Muramasa blanco. XL: $35.000.-
 - Tape Muramasa: $5.000.-`,
 horarios: `- Lunes: 20:00-22:00 / Gi / Clase de Fundamentales.
 - Miércoles: 20:00-22:00 / NoGi / Clase de BJJ y Grappling.

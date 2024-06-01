@@ -23,7 +23,8 @@
   "homepage": "https://github.com/jjmillar/bot-muramasa#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "openai": "^3.2.1",
+    "nodemon": "^3.1.2",
+    "openai": "^4.47.3",
     "telegraf": "^4.14.0"
   }
 }
