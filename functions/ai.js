@@ -1,11 +1,9 @@
 import OpenAI from "openai"
-import { config } from "dotenv"
 import INFO from "./info.js"
 
 /**
  * INITIALIZE SERVICES
  */
-config(); // Calls dotenv to enable use of process.env.CONST
 const openai = new OpenAI({ apiKey: process.env.API_KEY }) // Create OpenAI service
 
 /**
