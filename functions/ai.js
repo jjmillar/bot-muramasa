@@ -1,12 +1,12 @@
-import { Configuration, OpenAIApi } from "openai";
-import { config } from "dotenv";
-import INFO from "./info.js";
+import OpenAI from "openai"
+import { config } from "dotenv"
+import INFO from "./info.js"
 
 /**
  * INITIALIZE SERVICES
  */
 config(); // Calls dotenv to enable use of process.env.CONST
-const openai = new OpenAIApi(new Configuration({ apiKey: process.env.API_KEY })); // Create OpenAI service
+const openai = new OpenAI({ apiKey: process.env.API_KEY }) // Create OpenAI service
 
 /**
  * FUNCTION FOR AI THREAD
@@ -18,7 +18,7 @@ async function ai(ctx) {
     ctx.update.message.text.includes("Oye helio") === true
   ) {
     try {
-      const res = await openai.createChatCompletion({
+      const res = await openai.chat.completitions.create({
         model: "gpt-3.5-turbo-0125",
         messages: [
         { role: "system", content: `${INFO.aiMuramasa}`},
