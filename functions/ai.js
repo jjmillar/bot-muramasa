@@ -1,5 +1,6 @@
 import OpenAI from "openai"
 import INFO from "./info.js"
+import 'dotenv/config'
 
 /**
  * INITIALIZE SERVICES
@@ -16,14 +17,14 @@ async function ai(ctx) {
     ctx.update.message.text.includes("Oye helio") === true
   ) {
     try {
-      const res = await openai.chat.completitions.create({
+      const res = await openai.chat.completions.create({
         model: "gpt-3.5-turbo-0125",
         messages: [
         { role: "system", content: `${INFO.aiMuramasa}`},
         { role: "user", content: `${ctx.update.message.text}`}
       ],
       });
-      await ctx.reply(`${res.data.choices[0].message.content}`);
+      await ctx.reply(`${res.choices[0].message.content}`);
     } catch (error) {
       console.log(error);
     }

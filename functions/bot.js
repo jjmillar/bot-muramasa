@@ -1,4 +1,5 @@
 import { Telegraf } from "telegraf";
+import 'dotenv/config';
 import * as Buttons from "./buttons.js";
 import ai from "./ai.js";
 
