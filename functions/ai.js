@@ -18,7 +18,7 @@ async function ai(ctx) {
   ) {
     try {
       const res = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
+        model: "gpt-4o-mini-2024-07-18",
         messages: [
         { role: "system", content: `${INFO.aiMuramasa}`},
         { role: "user", content: `${ctx.update.message.text}`}
