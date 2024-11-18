@@ -21,7 +21,7 @@ const INFO = {
 - Tape Muramasa: $5.000.-`,
 horarios: `- Lunes: 20:00-22:00 / Gi / Clase de Fundamentales.
 - Miércoles: 20:00-22:00 / NoGi / Clase de BJJ y Grappling.
-- Viernes: 20:00-22:00 / NoGi / Clase de BJJ y Grappling.
+- Viernes: 20:00-22:00 / Gi / Clase de BJJ Avanzado.
 
 - Dirección: José Manso de Velasco #474, Los Ángeles.`
 };
