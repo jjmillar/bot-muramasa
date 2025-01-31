@@ -13,6 +13,9 @@ const bot = new Telegraf(process.env.BOT_TOKEN); // Create a new service to use 
  */
 bot.start(Buttons.menu); // telegram chat: "/start"
 bot.help(Buttons.help); // telegram chat: "/help"
+bot.on('new_chat_members', (ctx) => {ctx.reply
+  ('Bienvenido ' + ctx.from.first_name + ' al grupo de telegram de Muramasa BJJ. Respeto ante todo y usemos el grupo para hacer crecer nuestro Jiujitsu\n' + 'Si necesitas mas información, solo escribe /helio y te ayudaré en lo que pueda.');
+}); // Sends a welcome message to new members in the group chat
 
 /**
  * INLINE BUTTONS
