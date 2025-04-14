@@ -2,8 +2,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 import INFO from './info.js'
 import 'dotenv/config'
 
-const project = process.env.GEMINI_PROJECT_ID // Reemplaza con tu ID de proyecto
-const location = 'us-central1'
 const apiKey = process.env.GEMINI_API_KEY // Reemplaza con la clave de API que creaste
 let train = INFO.aiMuramasa // Prompt inicial para el modelo
 
