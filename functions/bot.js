@@ -20,7 +20,7 @@ bot.on('new_chat_members', (ctx) => {ctx.reply
 /**
  * INLINE BUTTONS
  */
-bot.command(["helio", "bot", "Helio", "Oie Helio"], Buttons.menu); // Main commando to call the inline menu. Use "/helio" for example.
+bot.command(["helio", "bot", "Helio"], Buttons.menu); // Main command to call the inline menu. Use "/helio" for example.
 bot.action("btn-back-menu", Buttons.menu);
 bot.action("btn-material", Buttons.material);
 bot.action("btn-apuntes", Buttons.apuntes);

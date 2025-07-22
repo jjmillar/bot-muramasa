@@ -9,12 +9,14 @@ let train = INFO.aiMuramasa // Prompt inicial para el modelo
 const genAI = new GoogleGenerativeAI(apiKey)
 
 // Get the generative model (e.g., gemini-pro)
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
 
 async function geminiai(ctx) {
     if (
       ctx.update.message.text.includes("oye helio") ||
-      ctx.update.message.text.includes("Oye helio") === true
+      ctx.update.message.text.includes("Oye helio") ||
+      ctx.update.message.text.includes("Oye Helio") ||
+      ctx.update.message.text.includes("oye Helio") === true
     ) {
       try {
         const result = await model.generateContent(train + ctx.update.message.text)
