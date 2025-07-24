@@ -31,7 +31,7 @@ async function geminiai(ctx) {
 
   try {
     const result = await model.generateContent({
-      contents: [{ text: prompt }]
+      contents: [{ parts: [{ text: prompt }] }]
     })
     const response = await result.response.text()
 
