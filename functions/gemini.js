@@ -5,6 +5,7 @@ import 'dotenv/config'
 const apiKey = process.env.GEMINI_API_KEY // Reemplaza con la clave de API que creaste
 let train = INFO.aiMuramasa // Prompt inicial para el modelo
 let threadHistory = {} // Historial de conversación
+let threadTimers = {} // Temporizadores para cada hilo
 const ALLOWED_THREAD_ID = 2763 // ID del hilo permitido
 
 // Initialize the GoogleGenerativeAI client instance
@@ -14,7 +15,6 @@ const genAI = new GoogleGenerativeAI(apiKey)
 const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
 
 async function geminiai(ctx) {
-    // Solo responde si el mensaje está en el thread permitido
   const threadId = ctx.message?.message_thread_id
   if (threadId !== ALLOWED_THREAD_ID) return
 
@@ -23,10 +23,16 @@ async function geminiai(ctx) {
     threadHistory[threadId] = [train]
   }
 
-  // Agrega el mensaje del usuario al historial
-  threadHistory[threadId].push(`Usuario: ${ctx.message.text}`)
+  // Reinicia el temporizador cada vez que llega un mensaje
+  if (threadTimers[threadId]) {
+    clearTimeout(threadTimers[threadId])
+  }
+  threadTimers[threadId] = setTimeout(() => {
+    delete threadHistory[threadId]
+    delete threadTimers[threadId]
+  }, 10 * 60 * 1000) // 10 minutos
 
-  // Prepara el prompt con el historial
+  threadHistory[threadId].push(`Usuario: ${ctx.message.text}`)
   const prompt = threadHistory[threadId].join('\n')
 
   try {
@@ -35,14 +41,12 @@ async function geminiai(ctx) {
     })
     const response = await result.response.text()
 
-    // Agrega la respuesta del bot al historial
     threadHistory[threadId].push(`Bot: ${response}`)
-
     await ctx.reply(response, { message_thread_id: threadId })
   } catch (error) {
     console.log(error)
-    await ctx.reply(error, { message_thread_id: threadId })
+    await ctx.reply('Ocurrió un error al procesar tu mensaje.', { message_thread_id: threadId })
   }
-  }
+}
   
   export default geminiai
