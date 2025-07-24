@@ -30,7 +30,9 @@ async function geminiai(ctx) {
   const prompt = threadHistory[threadId].join('\n')
 
   try {
-    const result = await model.generateContent([ { role: "user", parts: [ { text: prompt } ] } ])
+    const result = await model.generateContent({
+      contents: [{ text: prompt }]
+    })
     const response = await result.response.text()
 
     // Agrega la respuesta del bot al historial
@@ -39,7 +41,7 @@ async function geminiai(ctx) {
     await ctx.reply(response, { message_thread_id: threadId })
   } catch (error) {
     console.log(error)
-    await ctx.reply(error, { message_thread_id: threadId })
+    await ctx.reply('Ocurrió un error al procesar tu mensaje.', { message_thread_id: threadId })
   }
   }
   
