@@ -39,7 +39,7 @@ async function geminiai(ctx) {
     await ctx.reply(response, { message_thread_id: threadId })
   } catch (error) {
     console.log(error)
-    await ctx.reply('Ocurrió un error al procesar tu mensaje.', { message_thread_id: threadId })
+    await ctx.reply(error, { message_thread_id: threadId })
   }
   }
   
