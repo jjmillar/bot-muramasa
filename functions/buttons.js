@@ -179,7 +179,7 @@ export const reglamentos = async (ctx) => {
             [
               {
                 text: "ADCC",
-                url: "https://drive.google.com/file/d/1j-eD7vhFPwUZZpBzfI2VEzdKKnfBDsgQ/view?usp=sharing",
+                url: "https://drive.google.com/file/d/1pt-dmR0vBew9Dq5_q-kPiKh_IhzpHk5a/view?usp=sharing",
               },
             ],
             [
