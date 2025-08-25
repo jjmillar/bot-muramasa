@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node ./functions/bot.js",
-    "dev": "nodemon ./functions/bot.js"
+    "dev": "nodemon ./functions/bot.js",
+    "build": "echo \"No build step required\""
   },
   "engines": {
     "node": ">18.0.0"
