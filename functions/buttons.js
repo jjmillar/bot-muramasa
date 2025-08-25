@@ -1,4 +1,5 @@
 import INFO from "./info.js";
+import { deleteMessage } from "./utils.js";
 
 /**
  * MAIN MENU FOR INLINE MENU
@@ -6,7 +7,7 @@ import INFO from "./info.js";
  */
 export const menu = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply(
       `Hola ${ctx.from.first_name}. Pincha los botones de abajo para ayudarte en lo que pueda. Para no spamear el chat, favor de hacer click en el botón SALIR cuando ya no me necesites mas.`,
       {
@@ -43,7 +44,7 @@ export const menu = async (ctx) => {
  */
 export const material = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply(
       "Elige el tipo de material que deseas leer.\nYa iremos agregando material de a poco 💪🏻🥋🤘🏻",
       {
@@ -68,7 +69,7 @@ export const material = async (ctx) => {
  */
 export const apuntes = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply("Elige el apunte que desees leer.", {
       reply_markup: {
         inline_keyboard: [
@@ -99,7 +100,7 @@ export const apuntes = async (ctx) => {
  */
 export const rrss = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply("Acá tienes nuestras redes sociales 🤓", {
       reply_markup: {
         inline_keyboard: [
@@ -127,7 +128,7 @@ export const rrss = async (ctx) => {
  */
 export const horarios = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply(
       INFO.horarios,
       {
@@ -150,7 +151,7 @@ export const horarios = async (ctx) => {
  */
 export const eventos = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply(INFO.torneos, {
       reply_markup: {
         inline_keyboard: [
@@ -170,7 +171,7 @@ export const eventos = async (ctx) => {
  */
 export const reglamentos = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply(
       "Elige el reglamento que quieras revisar. El de ADCC está en español, pero el de IBJJF está en inglés.",
       {
@@ -241,7 +242,7 @@ export const help = async (ctx) => {
  */
 export const tienda = async (ctx) => {
   try {
-    ctx.deleteMessage();
+    deleteMessage(ctx);
     await ctx.reply(INFO.tienda,
       {
         reply_markup: {
@@ -263,7 +264,7 @@ export const tienda = async (ctx) => {
  */
 export const salir = async (ctx) => {
   try {
-    await ctx.deleteMessage();
+    await deleteMessage(ctx);
   } catch (error) {
     console.log(error);
   }
