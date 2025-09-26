@@ -105,13 +105,8 @@ export const rrss = async (ctx) => {
       reply_markup: {
         inline_keyboard: [
           [{ text: "Facebook", url: "https://www.facebook.com/muramasabjj" }],
-          [
-            {
-              text: "Instagram",
-              url: "https://www.instagram.com/muramasa_bjj",
-            },
-          ],
-          [{ text: "Muramasa TV", url: "https://t.me/+6nCjXUlzsM1iZjg5" }],
+          [{ text: "Instagram", url: "https://www.instagram.com/muramasa_bjj", }],
+          [{ text: "Discord Muramasa", url: "https://discord.gg/JXZBJJwQ" }],
           [{ text: "Atrás", callback_data: "btn-back-menu" }],
           [{ text: "Salir", callback_data: "btn-salir" }],
         ],
