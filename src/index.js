@@ -1,12 +1,12 @@
 import { Telegraf } from "telegraf";
-import 'dotenv/config';
-import * as Buttons from "./buttons.js";
-import geminiai from "./gemini.js";
+import * as Buttons from "./utils/buttons.js";
+import groqai from "./ai/groq.js";
 
 /**
  *  INITIALIZE SERVICES
  */
 const bot = new Telegraf(process.env.BOT_TOKEN); // Create a new service to use bot.functions
+//console.log(process.env.BOT_TOKEN);
 
 /**
  *  BASIC COMMANDS
@@ -34,7 +34,7 @@ bot.action("btn-salir", Buttons.salir);
 /**
  * AI CALL COMMAND
  */
-bot.on('text', geminiai); //Calls ai function on telegram app by typing "Oye helio <text>"
+bot.on('text', groqai); //Calls ai function on telegram app by typing "Oye helio <text>"
 
 /**
  * RUNNING APP

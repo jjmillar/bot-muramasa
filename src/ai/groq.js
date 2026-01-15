@@ -1,26 +1,22 @@
-import { GoogleGenerativeAI } from "@google/generative-ai"
-import INFO from './info.js'
-import 'dotenv/config'
+import Groq from "groq-sdk"
+import INFO from '../db/info.js'
 
-const apiKey = process.env.GEMINI_API_KEY // Reemplaza con la clave de API que creaste
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
+
 let train = INFO.aiMuramasa // Prompt inicial para el modelo
 let threadHistory = {} // Historial de conversación
 let threadTimers = {} // Temporizadores para cada hilo
 const ALLOWED_THREAD_ID = 2763 // ID del hilo permitido
 
-// Initialize the GoogleGenerativeAI client instance
-const genAI = new GoogleGenerativeAI(apiKey)
-
-// Get the generative model (e.g., gemini-pro)
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
-
-async function geminiai(ctx) {
+async function groqai(ctx) {
   const threadId = ctx.message?.message_thread_id
   if (threadId !== ALLOWED_THREAD_ID) return
 
   // Inicializa el historial si es la primera vez
   if (!threadHistory[threadId]) {
-    threadHistory[threadId] = [train]
+    threadHistory[threadId] = [
+      { role: "user", content: train }
+    ]
   }
 
   // Reinicia el temporizador cada vez que llega un mensaje
@@ -32,21 +28,31 @@ async function geminiai(ctx) {
     delete threadTimers[threadId]
   }, 10 * 60 * 1000) // 10 minutos
 
-  threadHistory[threadId].push(`Usuario: ${ctx.message.text}`)
-  const prompt = threadHistory[threadId].join('\n')
+  // Añade el mensaje del usuario al historial
+  threadHistory[threadId].push({
+    role: "user",
+    content: ctx.message.text
+  })
 
   try {
-    const result = await model.generateContent({
-      contents: [{ parts: [{ text: prompt }] }]
+    const chatCompletion = await groq.chat.completions.create({
+      messages: threadHistory[threadId],
+      model: "llama-3.3-70b-versatile"
     })
-    const response = await result.response.text()
+    
+    const response = chatCompletion.choices[0]?.message?.content
 
-    threadHistory[threadId].push(`Bot: ${response}`)
+    // Añade la respuesta del bot al historial
+    threadHistory[threadId].push({
+      role: "assistant",
+      content: response
+    })
+
     await ctx.reply(response, { message_thread_id: threadId })
   } catch (error) {
     console.log(error)
     await ctx.reply('Ocurrió un error al procesar tu mensaje.', { message_thread_id: threadId })
   }
 }
-  
-  export default geminiai
+
+export default groqai

@@ -1,4 +1,4 @@
-import INFO from "./info.js";
+import INFO from "../db/info.js";
 import { deleteMessage } from "./utils.js";
 
 /**

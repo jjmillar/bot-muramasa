@@ -1,31 +1,20 @@
 {
-  "name": "bot-muramasa",
-  "version": "1.0.0",
-  "main": "./functions/bot.js",
-  "description": "Bot del telegram de Muramasa",
-  "type": "module",
-  "scripts": {
-    "start": "node ./functions/bot.js",
-    "dev": "nodemon ./functions/bot.js",
-    "build": "echo \"No build step required\""
-  },
-  "engines": {
-    "node": ">18.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jjmillar/bot-muramasa.git"
-  },
-  "author": "Julian Millar",
+  "name": "newhelio",
+  "version": "2.0.0",
+  "description": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jjmillar/bot-muramasa/issues"
+  "author": "JJ Studio",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --env-file=.env --watch src/index.js"
   },
-  "homepage": "https://github.com/jjmillar/bot-muramasa#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
   "dependencies": {
-    "@google/generative-ai": "^0.24.0",
-    "dotenv": "^16.4.5",
-    "nodemon": "^3.1.2",
-    "telegraf": "^4.14.0"
+    "groq-sdk": "^0.37.0",
+    "telegraf": "^4.16.3"
   }
 }
