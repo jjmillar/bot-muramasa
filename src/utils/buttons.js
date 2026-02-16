@@ -14,10 +14,6 @@ export const menu = async (ctx) => {
         reply_markup: {
           inline_keyboard: [
             [
-              { text: "Horarios", callback_data: "btn-horarios" },
-              { text: "Eventos", callback_data: "btn-eventos" },
-            ],
-            [
               { text: "Redes Sociales", callback_data: "btn-rrss" },
               {
                 text: "Playlist Spotify",
@@ -28,6 +24,7 @@ export const menu = async (ctx) => {
               { text: "Material de Lectura", callback_data: "btn-material" },
               { text: "Tiendita", callback_data: "btn-tienda" },
             ],
+            [{ text: "Convenios", callback_data: "btn-convenios" }],
             [{ text: "Salir", callback_data: "btn-salir" }],
           ],
         },
@@ -106,7 +103,7 @@ export const rrss = async (ctx) => {
         inline_keyboard: [
           [{ text: "Facebook", url: "https://www.facebook.com/muramasabjj" }],
           [{ text: "Instagram", url: "https://www.instagram.com/muramasa_bjj", }],
-          [{ text: "Discord Muramasa", url: "https://discord.gg/JXZBJJwQ" }],
+          [{ text: "Discord", url: "https://discord.gg/JXZBJJwQ" }],
           [{ text: "Atrás", callback_data: "btn-back-menu" }],
           [{ text: "Salir", callback_data: "btn-salir" }],
         ],
@@ -117,48 +114,6 @@ export const rrss = async (ctx) => {
   }
 };
 
-/**
- * HORARIOS BUTTON
- * @param {object} ctx - context from the message on telegram
- */
-export const horarios = async (ctx) => {
-  try {
-    deleteMessage(ctx);
-    await ctx.reply(
-      INFO.horarios,
-      {
-        reply_markup: {
-          inline_keyboard: [
-            [{ text: "Atrás", callback_data: "btn-back-menu" }],
-            [{ text: "Salir", callback_data: "btn-salir" }],
-          ],
-        },
-      }
-    );
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-/**
- * EVENTOS BUTTON
- * @param {object} ctx - context from the message on telegram
- */
-export const eventos = async (ctx) => {
-  try {
-    deleteMessage(ctx);
-    await ctx.reply(INFO.torneos, {
-      reply_markup: {
-        inline_keyboard: [
-          [{ text: "Atrás", callback_data: "btn-back-menu" }],
-          [{ text: "Salir", callback_data: "btn-salir" }],
-        ],
-      },
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 /**
  * REGLAMENTOS BUTTON
@@ -172,18 +127,11 @@ export const reglamentos = async (ctx) => {
       {
         reply_markup: {
           inline_keyboard: [
-            [
-              {
-                text: "ADCC",
-                url: "https://drive.google.com/file/d/1pt-dmR0vBew9Dq5_q-kPiKh_IhzpHk5a/view?usp=sharing",
-              },
-            ],
-            [
-              {
-                text: "IBJJF Libro de reglas Ingles",
-                url: "https://drive.google.com/file/d/11ZsWFhBQdiE5WxXmLDJ8vOIA5oSA1lRW/view?usp=sharing",
-              },
-            ],
+            [{ text: "ADCC Libro de reglas Inglés Original", url: "https://drive.google.com/file/d/15-E7Vz8lq00UD8mqkmD4zd6wv5vdHdxH/view?usp=sharing"}],
+            [{ text: "ADCC Español (traduccion ia)", url: "https://drive.google.com/file/d/16NJwYXeg_83n6cSOis7nyzznyAjoAgow/view?usp=sharing"}],
+            [{ text: "ADCC Tecnicas Permitidas", url: "https://drive.google.com/file/d/1rC1TmkFwiDGhP1wbCGcq4Ww_blkMjzXl/view?usp=sharing"}],
+            [{ text: "ADCC Categorías", url: "https://drive.google.com/file/d/12VMHw8976zs8nSjdPS-9qwKoAov_B_hB/view?usp=sharing"}],
+            [{ text: "IBJJF Libro de reglas Inglés Original", url: "https://drive.google.com/file/d/11ZsWFhBQdiE5WxXmLDJ8vOIA5oSA1lRW/view?usp=sharing"}],
             [
               {
                 text: "IBJJF Libro de reglas Español DESACTUALIZADO",
@@ -242,6 +190,29 @@ export const tienda = async (ctx) => {
       {
         reply_markup: {
           inline_keyboard: [
+            [{ text: "Atrás", callback_data: "btn-back-menu" }],
+            [{ text: "Salir", callback_data: "btn-salir" }],
+          ],
+        },
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/**
+ * CONVENIOS BUTTON
+ * @param {object} ctx - context from the message on telegram
+ */
+export const convenios = async (ctx) => {
+  try {
+    deleteMessage(ctx);
+    await ctx.reply('Acá puedes revisar los convenios que tenemos actualmente vigentes.',
+      {
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: "VitaPlus", url: "https://drive.google.com/file/d/1tw6y3vBDEidfYEFs68CTBNi_p48ipKDD/view?usp=sharing",}],
             [{ text: "Atrás", callback_data: "btn-back-menu" }],
             [{ text: "Salir", callback_data: "btn-salir" }],
           ],

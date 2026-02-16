@@ -25,10 +25,9 @@ bot.action("btn-material", Buttons.material);
 bot.action("btn-apuntes", Buttons.apuntes);
 bot.action("btn-rrss", Buttons.rrss);
 bot.action("btn-reglamentos", Buttons.reglamentos);
-bot.action("btn-horarios", Buttons.horarios);
-bot.action("btn-eventos", Buttons.eventos);
 bot.action("btn-tienda", Buttons.tienda);
 bot.action("btn-salir", Buttons.salir);
+bot.action("btn-convenios", Buttons.convenios);
 
 /**
  * AI CALL COMMAND
