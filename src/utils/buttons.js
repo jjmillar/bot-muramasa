@@ -132,30 +132,10 @@ export const reglamentos = async (ctx) => {
             [{ text: "ADCC Tecnicas Permitidas", url: "https://drive.google.com/file/d/1rC1TmkFwiDGhP1wbCGcq4Ww_blkMjzXl/view?usp=sharing"}],
             [{ text: "ADCC Categorías", url: "https://drive.google.com/file/d/12VMHw8976zs8nSjdPS-9qwKoAov_B_hB/view?usp=sharing"}],
             [{ text: "IBJJF Libro de reglas Inglés Original", url: "https://drive.google.com/file/d/11ZsWFhBQdiE5WxXmLDJ8vOIA5oSA1lRW/view?usp=sharing"}],
-            [
-              {
-                text: "IBJJF Libro de reglas Español DESACTUALIZADO",
-                url: "https://drive.google.com/file/d/18LO8oNYVrBkHRj1-jlL40uOwk3jli7KX/view?usp=sharing",
-              },
-            ],
-            [
-              {
-                text: "IBJJF Guia de actualización de reglas",
-                url: "https://drive.google.com/file/d/1rF8QUnXf-cW5h0VppGcsGrgEyUZzOjUH/view?usp=sharing",
-              },
-            ],
-            [
-              {
-                text: "IBJJF Poster de movimientos prohibidos",
-                url: "https://drive.google.com/file/d/1UcjwKbq4HxWK3WTyb67CLgW8quAEY-S8/view?usp=sharing",
-              },
-            ],
-            [
-              {
-                text: "Regamento Chilegrappling",
-                url: "https://drive.google.com/file/d/13eKvLYyMw0HoDxskwQqXFGgSF1LddbVg/view?usp=sharing",
-              },
-            ],
+            [{ text: "IBJJF Libro de reglas Español DESACTUALIZADO", url: "https://drive.google.com/file/d/18LO8oNYVrBkHRj1-jlL40uOwk3jli7KX/view?usp=sharing"}],
+            [{ text: "IBJJF Guia de actualización de reglas", url: "https://drive.google.com/file/d/1rF8QUnXf-cW5h0VppGcsGrgEyUZzOjUH/view?usp=sharing"}],
+            [{ text: "IBJJF Poster de movimientos prohibidos", url: "https://drive.google.com/file/d/1UcjwKbq4HxWK3WTyb67CLgW8quAEY-S8/view?usp=sharing"}],
+            [{ text: "Regamento Chilegrappling", url: "https://drive.google.com/file/d/13eKvLYyMw0HoDxskwQqXFGgSF1LddbVg/view?usp=sharing"}],
             [{ text: "Atrás", callback_data: "btn-material" }],
             [{ text: "Salir", callback_data: "btn-salir" }],
           ],
@@ -213,6 +193,7 @@ export const convenios = async (ctx) => {
         reply_markup: {
           inline_keyboard: [
             [{ text: "VitaPlus", url: "https://drive.google.com/file/d/1tw6y3vBDEidfYEFs68CTBNi_p48ipKDD/view?usp=sharing",}],
+            [{ text: "LetsRoll", url: "https://drive.google.com/file/d/1WSWwoKC6OUoYQd7NLlHwK5GV4ih-JeT4/view?usp=sharing",}],
             [{ text: "Atrás", callback_data: "btn-back-menu" }],
             [{ text: "Salir", callback_data: "btn-salir" }],
           ],
