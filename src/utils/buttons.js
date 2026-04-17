@@ -193,7 +193,7 @@ export const convenios = async (ctx) => {
         reply_markup: {
           inline_keyboard: [
             [{ text: "VitaPlus", url: "https://drive.google.com/file/d/1tw6y3vBDEidfYEFs68CTBNi_p48ipKDD/view?usp=sharing"}],
-            [{ text: "LetsRoll", url: "https://drive.google.com/file/d/1-YP_YN6qv6xiEP91A9JUKU4jkLTzQXvQ/view?usp=sharing"}],
+            [{ text: "LetsRoll", url: "https://drive.google.com/file/d/1-YP_YN6qv6xiEP91A9JUKU4jkLTzQXvQ/view?usp=drive_link"}],
             [{ text: "Atrás", callback_data: "btn-back-menu" }],
             [{ text: "Salir", callback_data: "btn-salir" }],
           ],
