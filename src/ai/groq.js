@@ -1,34 +1,34 @@
 import Groq from "groq-sdk"
 import INFO from '../db/info.js'
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
+// ✅ Ya NO instancias groq aquí arriba (eso causaba el error en build time)
 
-let train = INFO.aiMuramasa // Prompt inicial para el modelo
-let threadHistory = {} // Historial de conversación
-let threadTimers = {} // Temporizadores para cada hilo
-const ALLOWED_THREAD_ID = 2763 // ID del hilo permitido
+let train = INFO.aiMuramasa
+let threadHistory = {}
+let threadTimers = {}
+const ALLOWED_THREAD_ID = 2763
 
 async function groqai(ctx) {
   const threadId = ctx.message?.message_thread_id
   if (threadId !== ALLOWED_THREAD_ID) return
 
-  // Inicializa el historial si es la primera vez
+  // ✅ Se instancia aquí dentro, en runtime, cuando ya existe process.env
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
+
   if (!threadHistory[threadId]) {
     threadHistory[threadId] = [
       { role: "user", content: train }
     ]
   }
 
-  // Reinicia el temporizador cada vez que llega un mensaje
   if (threadTimers[threadId]) {
     clearTimeout(threadTimers[threadId])
   }
   threadTimers[threadId] = setTimeout(() => {
     delete threadHistory[threadId]
     delete threadTimers[threadId]
-  }, 10 * 60 * 1000) // 10 minutos
+  }, 10 * 60 * 1000)
 
-  // Añade el mensaje del usuario al historial
   threadHistory[threadId].push({
     role: "user",
     content: ctx.message.text
@@ -39,10 +39,9 @@ async function groqai(ctx) {
       messages: threadHistory[threadId],
       model: "llama-3.3-70b-versatile"
     })
-    
+
     const response = chatCompletion.choices[0]?.message?.content
 
-    // Añade la respuesta del bot al historial
     threadHistory[threadId].push({
       role: "assistant",
       content: response
