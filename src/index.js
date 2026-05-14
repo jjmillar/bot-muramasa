@@ -3,38 +3,57 @@ import * as Buttons from "./utils/buttons.js";
 import groqai from "./ai/groq.js";
 import { welcomeMessage } from "./utils/utils.js";
 
-/**
- *  INITIALIZE SERVICES
- */
-const bot = new Telegraf(process.env.BOT_TOKEN); // Create a new service to use bot.functions
-//console.log(process.env.BOT_TOKEN);
+// Función que construye y configura el bot recibiendo env
+function buildBot(env) {
+  const bot = new Telegraf(env.BOT_TOKEN);
+
+  /**
+   * BASIC COMMANDS
+   */
+  bot.start(Buttons.menu);
+  bot.help(Buttons.help);
+  bot.on("new_chat_members", welcomeMessage);
+
+  /**
+   * INLINE BUTTONS
+   */
+  bot.command(["helio", "bot", "Helio"], Buttons.menu);
+  bot.action("btn-back-menu", Buttons.menu);
+  bot.action("btn-material", Buttons.material);
+  bot.action("btn-apuntes", Buttons.apuntes);
+  bot.action("btn-rrss", Buttons.rrss);
+  bot.action("btn-reglamentos", Buttons.reglamentos);
+  bot.action("btn-tienda", Buttons.tienda);
+  bot.action("btn-salir", Buttons.salir);
+  bot.action("btn-convenios", Buttons.convenios);
+
+  /**
+   * AI CALL
+   */
+  bot.on("text", groqai);
+
+  return bot;
+}
 
 /**
- *  BASIC COMMANDS
+ * ES MODULE EXPORT — requerido para Cloudflare Workers
  */
-bot.start(Buttons.menu); // telegram chat: "/start"
-bot.help(Buttons.help); // telegram chat: "/help"
-bot.on('new_chat_members', welcomeMessage); // Sends a welcome message to new members in the group chat
+export default {
+  async fetch(request, env, ctx) {
+    const bot = buildBot(env);
 
-/**
- * INLINE BUTTONS
- */
-bot.command(["helio", "bot", "Helio"], Buttons.menu); // Main command to call the inline menu. Use "/helio" for example.
-bot.action("btn-back-menu", Buttons.menu);
-bot.action("btn-material", Buttons.material);
-bot.action("btn-apuntes", Buttons.apuntes);
-bot.action("btn-rrss", Buttons.rrss);
-bot.action("btn-reglamentos", Buttons.reglamentos);
-bot.action("btn-tienda", Buttons.tienda);
-bot.action("btn-salir", Buttons.salir);
-bot.action("btn-convenios", Buttons.convenios);
+    // Solo acepta POST (los updates de Telegram llegan como POST)
+    if (request.method !== "POST") {
+      return new Response("OK", { status: 200 });
+    }
 
-/**
- * AI CALL COMMAND
- */
-bot.on('text', groqai); //Calls ai function on telegram app by typing "Oye helio <text>"
-
-/**
- * RUNNING APP
- */
-bot.launch(); // Run bot on server
+    try {
+      const update = await request.json();
+      await bot.handleUpdate(update);
+      return new Response("OK", { status: 200 });
+    } catch (err) {
+      console.error("Error handling update:", err);
+      return new Response("Error", { status: 500 });
+    }
+  },
+};
