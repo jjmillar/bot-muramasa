@@ -12,7 +12,6 @@
     "start": "node src/index.js"
   },
   "devDependencies": {
-    "standard": "^17.1.2",
     "wrangler": "^4.0.0"
   },
   "dependencies": {
