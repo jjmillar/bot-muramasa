@@ -1,0 +1,3 @@
+name = "bot-muramasa"   # Debe coincidir EXACTAMENTE con el nombre en el dashboard
+main = "src/index.js"           # O donde esté tu entry point
+compatibility_date = "2025-01-01"

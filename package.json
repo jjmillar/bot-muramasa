@@ -12,7 +12,8 @@
     "start": "node src/index.js"
   },
   "devDependencies": {
-    "standard": "^17.1.2"
+    "standard": "^17.1.2",
+    "wrangler": "^4.0.0"
   },
   "dependencies": {
     "groq-sdk": "^0.37.0",
