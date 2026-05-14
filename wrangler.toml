@@ -2,3 +2,4 @@ name = "bot-muramasa"   # Debe coincidir EXACTAMENTE con el nombre en el dashboa
 main = "src/index.js"           # O donde esté tu entry point
 compatibility_date = "2026-05-14"
 compatibility_flags = ["nodejs_compat"]
+BOT_TOKEN = "5537954512:AAHymmBk3ccUFyXDl6HP3As11K_c_Ta9-PE"
