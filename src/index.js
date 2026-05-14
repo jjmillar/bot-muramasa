@@ -3,9 +3,9 @@ import * as Buttons from "./utils/buttons.js";
 import groqai from "./ai/groq.js";
 import { welcomeMessage } from "./utils/utils.js";
 
-// Función que construye y configura el bot recibiendo env
 function buildBot(env) {
-  const bot = new Telegraf(env.BOT_TOKEN);
+  // .trim() elimina los \n\n que tenía el token
+  const bot = new Telegraf(env.BOT_TOKEN.trim());
 
   /**
    * BASIC COMMANDS
@@ -40,20 +40,21 @@ function buildBot(env) {
  */
 export default {
   async fetch(request, env, ctx) {
-    const bot = buildBot(env);
-
-    // Solo acepta POST (los updates de Telegram llegan como POST)
+    // Solo acepta POST antes de construir el bot (más eficiente)
     if (request.method !== "POST") {
       return new Response("OK", { status: 200 });
     }
 
     try {
       const update = await request.json();
+      const bot = buildBot(env);
       await bot.handleUpdate(update);
       return new Response("OK", { status: 200 });
     } catch (err) {
-      console.error("Error handling update:", err);
-      return new Response("Error", { status: 500 });
+      // ✅ Siempre retorna 200 — si retornas 500 Telegram reintenta
+      // el mismo update indefinidamente y acumula la cola
+      console.error("Error handling update:", err.message);
+      return new Response("OK", { status: 200 });
     }
   },
 };
