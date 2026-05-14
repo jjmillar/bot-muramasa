@@ -5,7 +5,9 @@ import { welcomeMessage } from "./utils/utils.js";
 
 function buildBot(env) {
   // .trim() elimina los \n\n que tenía el token
-  const bot = new Telegraf(env.BOT_TOKEN.trim());
+  const token = env.BOT_TOKEN?.trim();
+  if (!token) throw new Error("BOT_TOKEN no está configurado en las variables de entorno");
+  const bot = new Telegraf(token);
 
   /**
    * BASIC COMMANDS
