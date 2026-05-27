@@ -2,3 +2,6 @@ name = "bot-muramasa"   # Debe coincidir EXACTAMENTE con el nombre en el dashboa
 main = "src/index.js"           # O donde esté tu entry point
 compatibility_date = "2026-05-14"
 compatibility_flags = ["nodejs_compat"]
+[observability.logs]
+enabled = false
+invocation_logs = true
