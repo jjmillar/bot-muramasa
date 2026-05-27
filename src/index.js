@@ -32,7 +32,7 @@ function buildBot(env) {
   /**
    * AI CALL
    */
-  //bot.on("text", groqai);sd
+  bot.on("text", groqai);
 
   return bot;
 }
